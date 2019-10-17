@@ -1,0 +1,33 @@
+{
+    "compilerOptions": {
+        "module": "es6",
+        "target": "es5",
+        "sourceMap": true,
+        "isolatedModules": false,
+        "lib": ["es2015", "es2017", "dom"],
+        "baseUrl": ".",
+        "outDir": "build/dist",
+
+        "allowJs": true,
+        "jsx": "react",
+        "moduleResolution": "node",
+        "rootDir": "src",
+        "forceConsistentCasingInFileNames": true,
+        "noImplicitReturns": true,
+        "noImplicitThis": true,
+        "noImplicitAny": false,
+        "strictNullChecks": false,
+        "suppressImplicitAnyIndexErrors": true,
+        "noUnusedLocals": true,
+        "types": [ "node", "mocha", "chai" ]
+    },
+    "exclude": [
+        "node_modules",
+        "build",
+        "scripts",
+        "acceptance-tests",
+        "webpack",
+        "coverage"
+    ]
+}
+  
