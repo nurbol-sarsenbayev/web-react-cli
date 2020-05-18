@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 const createComponent = require('./libs/createComponent');
-const createModule = require('./libs/createModule');
 const createPage = require('./libs/createPage');
 const createSFC = require('./libs/createSFC');
 const createService = require('./libs/createsService');
@@ -22,10 +21,6 @@ switch (command) {
             case 'page':
             case 'p':
                 createPage(name, args);
-                break;
-            case 'module':
-            case 'm':
-                createModule(name, args);
                 break;
             case 'sfc':
                 createSFC(name, args);

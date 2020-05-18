@@ -12,6 +12,6 @@
     "rimraf": "^2.6.3"
   },
   "bin": {
-    "altyn": "./index.js"
+    "dna": "./index.js"
   }
 }

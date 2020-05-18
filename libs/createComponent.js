@@ -4,11 +4,9 @@ const files = require('./files');
 const helpers = require('./helpers');
 
 function createComponent(componentDir, args, isPage = false) {
-    const moduleName = args[0] || '';
     const componentName = path.basename(componentDir);
     componentDir = path.dirname(componentDir);
     const dir = files.getBaseDir();
-    const className = (moduleName ? moduleName + '-' : '') + helpers.camelCaseToDash(componentName);
  
     let hasServices = !helpers.includes(args, '-s', '--services', '-sh', '--short'),
         hasModels = !helpers.includes(args, '-m', '--models', '-sh', '--short'),
@@ -17,13 +15,14 @@ function createComponent(componentDir, args, isPage = false) {
 
     const replaces = { 
         '%component%': componentName,
-        '%className%': className
     };
     
     const fileReplaces = { 
-        'component.tsx': componentName + '.tsx',
-        'component.scss': componentName + '.scss',
-        'component-view.tsx': componentName + 'View.tsx',
+        'component.tsx': `${componentName}.tsx`,
+        'component.scss': `${componentName}.scss`,
+        'component-store.ts': `${componentName}Store.ts`,
+        'i-component-store.ts': `I${componentName}Store.ts`,
+        'i-component-parent-store.ts': `I${componentName}ParentStore.ts`,
         'components': hasComponents,
         'services': hasServices,
         'models': hasModels,
